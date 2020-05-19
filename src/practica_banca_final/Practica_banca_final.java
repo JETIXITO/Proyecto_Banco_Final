@@ -23,8 +23,8 @@ public class Practica_banca_final {
     public static void main(String[] args) {
         // TODO code application logic here
         
-           Cuentas.add(new DatosCliente("Juan", "Perez", "Casa", 1, 689751300, 18, 2, 0));
-        Cuentas.add(new DatosCliente("Juan", "Perez", "Plaza", 1, 689854821, 18, 2, 10));
+           Cuentas.add(new DatosCliente("Peter", "Panda", "C/ de mi casa", 1, 654987697, 19, 2, 0));
+        Cuentas.add(new DatosCliente("Juan", "Perez", "C/ de mi patio", 2, 673564521, 23, 2, 200));
 
         int NumCuenta;
         int Operaciones;
@@ -32,7 +32,7 @@ public class Practica_banca_final {
         int CantidadPagosRetiradas;
 
         do {
-            System.out.println("¿Las operaciones que vas a realizar son Fisicas o Digitales?");
+            System.out.println("¿Las operaciones que vas a realizar son físicas o digitales?");
 
             Operaciones = EleccionOperaciones();
             switch (Operaciones) {
@@ -42,15 +42,15 @@ public class Practica_banca_final {
                     switch (opcion) {
 
                         case 0:
-                            System.out.println("Cerrando");
+                            System.out.println("Saliendo del programa...");
                             break;
 
                         case 1:
                             MostrarCuentas();
-                            System.out.println("Elige el numero de la cuenta que vayas a usar");
+                            System.out.println("Introduzca el número de la cuenta que desea utilizar.");
                             NumCuenta = sc.nextInt();
                             sc.nextLine();
-                            System.out.println("Que cantidad vas a ingresar");
+                            System.out.println("Introduzca la cantidad que desea ingresar.");
                             CantidadIngresos = sc.nextInt();
                             sc.nextLine();
 
@@ -59,10 +59,10 @@ public class Practica_banca_final {
 
                         case 2:
                             MostrarCuentas();
-                            System.out.println("Elige el numero de la cuenta que vayas a usar");
+                            System.out.println("Introduzca el número de la cuenta que desea utilizar.");
                             NumCuenta = sc.nextInt();
                             sc.nextLine();
-                            System.out.println("Que cantidad vas a retirar");
+                            System.out.println("Introduzca la cantidad que desea retirar.");
                             CantidadPagosRetiradas = sc.nextInt();
                             sc.nextLine();
                             Cuentas.get(NumCuenta).retirar(CantidadPagosRetiradas);
@@ -70,11 +70,11 @@ public class Practica_banca_final {
                             break;
 
                         case 3:
-                            System.out.println("Siga los pasos");
+                            System.out.println("Siga las indicaciones que se le especificarán a contiuación.");
                             CrearPerfil();
                             break;
                         case 4:
-                            //Id del Gestor del Banco es 101
+                            //La ID asignada a los gestores es la clave 101
                             ModificarlaCuenta();
                             break;
                         case 5:
@@ -82,7 +82,7 @@ public class Practica_banca_final {
                             break;
 
                         default:
-                            System.out.println("No esta disponible actualmente esa opcion");
+                            System.out.println("El número introducido no corresponde a ninguna opción.");
                             break;
 
                     }
@@ -91,14 +91,14 @@ public class Practica_banca_final {
                     int Opcion = MenuInternet();
                     switch (Opcion) {
                         case 0:
-                            System.out.println("Saliendo");
+                            System.out.println("Saliendo del programa...");
                             break;
                         case 1:
                             MostrarCuentas();
-                            System.out.println("Elige el numero de la cuenta que vayas a usar");
+                            System.out.println("Introduzca el número de la cuenta que desea utilizar.");
                             NumCuenta = sc.nextInt();
                             sc.nextLine();
-                            System.out.println("Escribe la cantidad del pago");
+                            System.out.println("Introduzca el importe del pago que va a realizar.");
                             CantidadPagosRetiradas = sc.nextInt();
                             sc.nextLine();
                             Cuentas.get(NumCuenta).retirar(CantidadPagosRetiradas);
@@ -110,7 +110,7 @@ public class Practica_banca_final {
                             break;
 
                         default:
-                            System.out.println("No esta disponible actualmente esa opcion");
+                            System.out.println("El número introducido no corresponde a ninguna opción.");
                             break;
                     }
                     break;
@@ -199,22 +199,22 @@ public class Practica_banca_final {
     }
 
     public static void CrearPerfil() {
-        System.out.println("Cual es su nombre");
+        System.out.println("Introduzca su nombre.");
         String nombre = sc.nextLine();
-        System.out.println("Cual es su apellido");
+        System.out.println("Introduzca su/s apellido/s.");
         String apellido = sc.nextLine();
-        System.out.println("Cual es su direccion");
+        System.out.println("Introduzca su dirección.");
         String direccion = sc.nextLine();
-        System.out.println("Cual es su nif");
+        System.out.println("Introduzca su NIF.");
         int nif = sc.nextInt();
         sc.nextLine();
-        System.out.println("Cual es su telefono");
+        System.out.println("Introduzca su número de teléfono.");
         int telefono = sc.nextInt();
         sc.nextLine();
-        System.out.println("Cual es su edad");
+        System.out.println("Introduzca su edad.");
         int edad = sc.nextInt();
         sc.nextLine();
-        System.out.println("Cantidad de cuentas que tengas sino tienes ninguna pon 1");
+        System.out.println("Introduzca la cantidad de cuentas que posee. Si no posee ninguna introduzca un 1.");
         int cantidad_cuentas = sc.nextInt();
         sc.nextLine();
 
@@ -238,53 +238,53 @@ public class Practica_banca_final {
         int NIF;
         int Telefono;
         int Edad;
-        System.out.println("¿Eres un Gestor del Banco pon tu id?");
+        System.out.println("Para realizar esta acción debe ser un gestor del banco. Confirme su identidad introduciendo su ID de gestor.");
         Id = sc.nextInt();
         sc.nextLine();
         if (Id == 101) {
 
             MostrarCuentas();
-            System.out.println("Elige el numero de la cuenta que quieres modificar");
+            System.out.println("Elige el número de la cuenta que quieres modificar.");
             NumCuenta = sc.nextInt();
             sc.nextLine();
-            System.out.println("Escribe tu NIF para ver si eres tu");
+            System.out.println("Introduzca el NIF de la cuenta seleccionada.");
             Comprobacion = sc.nextInt();
             sc.nextLine();
             if (Comprobacion == Cuentas.get(NumCuenta).getNif()) {
 
-                System.out.println("¿Que quieres modificar algo de tu cuenta?");
+                System.out.println("¿Qué deseas modificar de la cuenta?");
                 Decision = sc.nextInt();
                 sc.nextLine();
                 int opcion = MenuModificar();
 
                 switch (opcion) {
                     case 1:
-                        System.out.println("Escribe tu nuevo Nombre");
+                        System.out.println("Introduzca el nuevo nombre.");
                         Nombre = sc.nextLine();
                         Cuentas.get(NumCuenta).setNombre(Nombre);
                         break;
 
                     case 2:
-                        System.out.println("Escribe tu nuevo Apellido");
+                        System.out.println("Introduzca el nuevo nombre.");
                         Apellido = sc.nextLine();
                         Cuentas.get(NumCuenta).setApellido(Apellido);
                         break;
 
                     case 3:
-                        System.out.println("Escribe tu nueva direccion Direccion");
+                        System.out.println("Introduzca su nueva dirección.");
                         Direccion = sc.nextLine();
                         Cuentas.get(NumCuenta).setDireccion(Direccion);
                         break;
 
                     case 4:
-                        System.out.println("Escribe tu nuevo numero de Telefono");
+                        System.out.println("Introduzca su nuevo número de teléfono.");
                         Telefono = sc.nextInt();
                         sc.nextLine();
                         Cuentas.get(NumCuenta).setTelefono(Telefono);
                         break;
 
                     case 5:
-                        System.out.println("Escribe tu Edad Actual");
+                        System.out.println("Introduzca su edad actual.");
                         Edad = sc.nextInt();
                         sc.nextLine();
                         Cuentas.get(NumCuenta).setEdad(Edad);
@@ -292,10 +292,10 @@ public class Practica_banca_final {
 
                 }
             } else {
-                System.out.println("No eres tu");
+                System.out.println("Fallo en la identificación del usuario de la cuenta. Compruebe que ha introducido correctamente el NIF del usuario de la cuenta.");
             }
         } else {
-            System.out.println("No eres un Gestor del Banco lo que has intentado es ilegal");
+            System.out.println("No eres un gestor del banco por lo que la acción ha sido denegada.");
         }
     }
 
@@ -303,10 +303,10 @@ public class Practica_banca_final {
         int NumCuenta;
         int NIF;
         MostrarCuentas();
-        System.out.println("Elige el numero de tu cuenta");
+        System.out.println("Elige el numero de tu cuenta.");
         NumCuenta = sc.nextInt();
         sc.nextLine();
-        System.out.println("Escribe tu NIF para ver si eres tu");
+        System.out.println("Introduzca su NIF para asegurarnos de que es usted.");
         NIF = sc.nextInt();
         sc.nextLine();
         if (NIF == Cuentas.get(NumCuenta).getNif()) {
@@ -314,7 +314,7 @@ public class Practica_banca_final {
                 SaldoMedio(NumCuenta);
 
         } else {
-            System.out.println("No eres tu realmente");
+            System.out.println("Fallo en la identificación de su identidad.");
         }
     }
 
