@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Practica_banca_final {
 
     static Scanner sc = new Scanner(System.in);
-    static ArrayList<Datos_Cliente> Cuentas = new ArrayList<Datos_Cliente>();
+    static ArrayList<DatosCliente> Cuentas = new ArrayList<DatosCliente>();
 
     /**
      * @param args the command line arguments
@@ -23,8 +23,8 @@ public class Practica_banca_final {
     public static void main(String[] args) {
         // TODO code application logic here
         
-           Cuentas.add(new Datos_Cliente("Juan", "Perez", "Casa", 1, 689751300, 18, 2, 0));
-        Cuentas.add(new Datos_Cliente("Juan", "Perez", "Plaza", 1, 689854821, 18, 2, 10));
+           Cuentas.add(new DatosCliente("Juan", "Perez", "Casa", 1, 689751300, 18, 2, 0));
+        Cuentas.add(new DatosCliente("Juan", "Perez", "Plaza", 1, 689854821, 18, 2, 10));
 
         int NumCuenta;
         int Operaciones;
@@ -218,7 +218,7 @@ public class Practica_banca_final {
         int cantidad_cuentas = sc.nextInt();
         sc.nextLine();
 
-        Cuentas.add(new Datos_Cliente(nombre, apellido, direccion, nif, telefono, edad, cantidad_cuentas, 0));
+        Cuentas.add(new DatosCliente(nombre, apellido, direccion, nif, telefono, edad, cantidad_cuentas, 0));
     }
 
     public static void MostrarCuentas() {
