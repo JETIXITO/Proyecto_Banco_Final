@@ -23,7 +23,7 @@ public class Practica_banca_final {
     public static void main(String[] args) {
         // TODO code application logic here
         
-           Cuentas.add(new DatosCliente("Peter", "Panda", "C/ de mi casa", 1, 654987697, 19, 2, 0));
+        Cuentas.add(new DatosCliente("Peter", "Panda", "C/ de mi casa", 1, 654987697, 19, 2, 0));
         Cuentas.add(new DatosCliente("Juan", "Perez", "C/ de mi patio", 2, 673564521, 23, 2, 200));
 
         int NumCuenta;
